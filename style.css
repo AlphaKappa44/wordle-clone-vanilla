@@ -1,0 +1,37 @@
+* {
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: #123213;
+}
+
+.title-container {
+    text-align: center;
+    width: 510px;
+    border-bottom: solid 1px #3a3a3c
+}
+
+.game-container {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+}
+.tile-container {
+    width: 330px;
+    margin-bottom: 30px;
+}
+
+.message-container {
+    color: red;
+}
+
+
+.key-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 510px;
+}

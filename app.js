@@ -5,7 +5,7 @@ const keyboard = document.querySelector('.key-container');
 // create arry of key's letters
 const keys = ['A', 'Z', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 
 'Q', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'ENTER',
-'W', 'X', 'C', 'V', 'B', 'N'];
+'W', 'X', 'C', 'V', 'B', 'N', '-'];
 
 const handleClick = (event) => {
     event.preventDefault();
@@ -23,4 +23,7 @@ keys.forEach(key => {
 
 // create the tiles
 const tileDisplay = document.querySelector('.tile-container');
+
+// create arry of 's letters
+const tiles = ['C', 'R', 'O', 'W', 'N'];
 

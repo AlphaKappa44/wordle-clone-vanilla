@@ -10,17 +10,22 @@ const keys = ['A', 'Z', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
 let currentRow = 0;
 let currentTile = 0;
 
+// Solution alternative:
 // const handleClick = (event) => {
 //     console.log('click', event.target);
 //     console.log('click', event.target.id);
+//     addLetter(event.target.id)
 // }
 
+// Handles the letter coming from the eventListener
 const handleClick = (key) => {
     console.log('Clicked Tile:', key);
+    // use the letter in a fonction to add it in the grid
     addLetter(key)
     // console.log(letter)
 }
 
+// Function to add the handled letter typed inside a tile/row/grid 
 const addLetter = (letter) => {
     // const tile = document.getElementById('guessedRow-0-tile0');
     const tile = document.getElementById('guessedRow-' + currentRow + '-tile-' + currentTile);

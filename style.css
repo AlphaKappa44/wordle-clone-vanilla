@@ -9,8 +9,10 @@ body {
 
 .title-container {
     text-align: center;
-    width: 510px;
-    border-bottom: solid 1px #3a3a3c
+    /* width: 510px; */
+    border-bottom: solid 1px #3a3a3c;
+    width: 330px;
+    margin-bottom: 30px;
 }
 
 .game-container {
@@ -20,10 +22,22 @@ body {
     justify-content: space-between;
     align-items:center;
 }
-.tile-container {
-    width: 330px;
-    margin-bottom: 30px;
+
+.tile-container div {
+    display: flex;
 }
+
+.tile-container .tile {
+    width:62px;
+    height:62px;
+    border: 2px solid #3a3a3c;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+}
+
 
 .message-container {
     color: red;

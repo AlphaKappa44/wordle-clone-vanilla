@@ -42,7 +42,8 @@ guessedRows.forEach((guessedRow, guessedRowIndex) => {
     guessedRow.forEach((guessedLetter, guessedLetterIndex) => {
         const tileElement = document.createElement('div');
         tileElement.setAttribute('id', 'guessedRow-' + guessedRowIndex + '-tile' + guessedLetterIndex)
-        rowElement.append.tileElement;
+        tileElement.classList.add('tile');
+        rowElement.append(tileElement);
     })
     tileDisplay.append(rowElement);
 });

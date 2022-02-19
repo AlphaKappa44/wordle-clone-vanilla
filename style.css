@@ -35,3 +35,12 @@ body {
     flex-wrap: wrap;
     width: 510px;
 }
+
+.key-container button {
+    width: 43px;
+    height: 58px;
+    border-radius: 4px;
+    border: none;
+    background-color:#818384;
+    margin: 4px;
+}

@@ -46,5 +46,9 @@ body {
 }
 
 .key-container button:nth-child(21), .key-container button:nth-child(28) {
-    width: 78px;
+    width: 68px;
+}
+
+.key-container button:nth-child(11) {
+    margin-left:35px;
 }

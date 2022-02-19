@@ -21,10 +21,10 @@ keys.forEach(key => {
     keyboard.append(buttonElement);
 })
 
-// create the tiles
+// creates the tiles
 const tileDisplay = document.querySelector('.tile-container');
 
-// create array of 6 empty arrays of guessed letters for 6 attempts
+// creates an array of 6 empty arrays of guessed letters for 6 attempts
 const guessedRows = [
     ['', '', '', '', ''],
     ['', '', '', '', ''],
@@ -34,10 +34,15 @@ const guessedRows = [
     ['', '', '', '', '']
 ];
 
-// assign letters to tiles
+// loop creates divs for each guessed letter
 guessedRows.forEach((guessedRow, guessedRowIndex) => {
     const rowElement = document.createElement('div');
     rowElement.setAttribute('id', 'guessedRow-' + guessedRowIndex);
-
+    // loop inside the loop: creates letter for each tile
+    guessedRow.forEach((guessedLetter, guessedLetterIndex) => {
+        const tileElement = document.createElement('div');
+        tileElement.setAttribute('id', 'guessedRow-' + guessedRowIndex + '-tile' + guessedLetterIndex)
+        rowElement.append.tileElement;
+    })
     tileDisplay.append(rowElement);
 });

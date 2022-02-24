@@ -30,6 +30,9 @@ const addLetter = (letter) => {
     // const tile = document.getElementById('guessedRow-0-tile0');
     const tile = document.getElementById('guessedRow-' + currentRow + '-tile-' + currentTile);
     tile.textContent = letter;
+    guessedRows[currentRow][currentTile] = letter;
+    currentTile++;
+    console.log(guessedRows)
 }
 
 // assign letters to keys

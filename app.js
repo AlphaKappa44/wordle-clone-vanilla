@@ -5,7 +5,7 @@ const keyboard = document.querySelector('.key-container');
 // create arry of key's letters
 const keys = ['A', 'Z', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 
 'Q', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'ENTER',
-'W', 'X', 'C', 'V', 'B', 'N', '-'];
+'W', 'X', 'C', 'V', 'B', 'N', 'DEL'];
 
 let currentRow = 0;
 let currentTile = 0;
@@ -21,18 +21,29 @@ let currentTile = 0;
 const handleClick = (key) => {
     console.log('Clicked Tile:', key);
     // use the letter in a fonction to add it in the grid
+    if (key === 'DEL' ) {
+        console.log('Delete letter')
+        return
+    }
+    if (key === 'ENTER' ) {
+        console.log('Check row')
+        return
+    }
     addLetter(key)
     // console.log(letter)
 }
 
 // Function to add the handled letter typed inside a tile/row/grid 
-const addLetter = (letter) => {
-    // const tile = document.getElementById('guessedRow-0-tile0');
-    const tile = document.getElementById('guessedRow-' + currentRow + '-tile-' + currentTile);
-    tile.textContent = letter;
-    guessedRows[currentRow][currentTile] = letter;
-    currentTile++;
-    console.log(guessedRows)
+    const addLetter = (letter) => {
+        if(currentTile < 5 && currentRow < 6) {
+        // const tile = document.getElementById('guessedRow-0-tile0');
+        const tile = document.getElementById('guessedRow-' + currentRow + '-tile-' + currentTile);
+        tile.textContent = letter;
+        guessedRows[currentRow][currentTile] = letter;
+        tile.setAttribute('data', letter);
+        currentTile++;
+        console.log(guessedRows)
+    }
 }
 
 // assign letters to keys

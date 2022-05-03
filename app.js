@@ -22,15 +22,18 @@ const handleClick = (key) => {
     console.log('Clicked Tile:', key);
     // use the letter in a fonction to add it in the grid
     if (key === 'DEL' ) {
-        console.log('Delete letter')
+        deleteLetter();
+        console.log(guessedRows)
         return
     }
     if (key === 'ENTER' ) {
         console.log('Check row')
+        console.log(guessedRows)
         return
     }
     addLetter(key)
     // console.log(letter)
+    console.log(guessedRows)
 }
 
 // Function to add the handled letter typed inside a tile/row/grid 
@@ -42,8 +45,22 @@ const handleClick = (key) => {
         guessedRows[currentRow][currentTile] = letter;
         tile.setAttribute('data', letter);
         currentTile++;
-        console.log(guessedRows)
+
     }
+}
+
+const deleteLetter = () => {
+    if (currentTile > 0) {
+        currentTile--
+        const tile = document.getElementById('guessedRow-' + currentRow + '-tile-' + currentTile);
+        tile.textContent = '';
+        guessedRows[currentRow][currentTile] = '';
+        tile.setAttribute('data', '');
+        console.log('Deleted letter')
+    } else {
+        console.log('Nothing to delete!')
+    }
+
 }
 
 // assign letters to keys

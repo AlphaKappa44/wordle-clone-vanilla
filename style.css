@@ -44,6 +44,13 @@ body {
     height: 30px;
 }
 
+.message-container p {
+    border-color: #818384;
+    border-radius: 5px;
+    padding:10px;
+    margin: 0;
+}
+
 
 .key-container {
     display: flex;

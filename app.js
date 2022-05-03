@@ -1,8 +1,14 @@
-// create keyboard
 // select keys
+// create keyboard
 const keyboard = document.querySelector('.key-container');
+// creates the tiles
+const tileDisplay = document.querySelector('.tile-container');
 
-// create arry of key's letters
+const messageDisplay = document.querySelector('.message-container');
+
+// handle the click
+const wordle = 'SUPER';
+// create array of key's letters
 const keys = ['A', 'Z', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 
 'Q', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'ENTER',
 'W', 'X', 'C', 'V', 'B', 'N', 'DEL'];
@@ -27,7 +33,8 @@ const handleClick = (key) => {
         return
     }
     if (key === 'ENTER' ) {
-        console.log('Check row')
+        console.log('Checking row:')
+        checkRow();
         console.log(guessedRows)
         return
     }
@@ -63,6 +70,24 @@ const deleteLetter = () => {
 
 }
 
+const checkRow = () => {
+    guess = guessedRows[currentRow].join('')
+
+    if (currentTile === 5) {
+        console.log('Guess is ' + guess, 'and Wordle is ' + wordle)
+        if (wordle == guess) {
+            showMessage('YES! THIS IS IT!!!')
+        }
+    }
+
+}
+
+const showMessage = (message) => {
+    const messageElement = document.createElement('p')
+    messageElement.textContent = message
+    messageDisplay.append(messageElement)
+}
+
 // assign letters to keys
 keys.forEach(key => {
     const buttonElement = document.createElement('button');
@@ -73,11 +98,6 @@ keys.forEach(key => {
     keyboard.append(buttonElement);
 })
 
-// creates the tiles
-const tileDisplay = document.querySelector('.tile-container');
-
-// handle the click
-const wordle = 'SUPER';
 
 // creates an array of 6 empty arrays of guessed letters for 6 attempts
 const guessedRows = [

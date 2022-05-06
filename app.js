@@ -15,6 +15,7 @@ const keys = ['A', 'Z', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
 
 let currentRow = 0;
 let currentTile = 0;
+let isGameOver = false;
 
 // Solution alternative:
 // const handleClick = (event) => {
@@ -73,10 +74,23 @@ const deleteLetter = () => {
 const checkRow = () => {
     guess = guessedRows[currentRow].join('')
 
-    if (currentTile === 5) {
+    if (currentTile > 4) {
         console.log('Guess is ' + guess, 'and Wordle is ' + wordle)
+        flipTile()
         if (wordle == guess) {
-            showMessage('YES! THIS IS IT!!!')
+            showMessage('GOOD JOB !!!')
+            isGuessed = true
+            return
+        } else {
+            if (currentRow >= 5) {
+                isGameOver = true
+                showMessage('Game Over...')
+                return
+            }
+            if (currentRow < 5) {
+                currentRow++
+                currentTile = 0
+            }
         }
     }
 
@@ -125,3 +139,17 @@ guessedRows.forEach((guessedRow, guessedRowIndex) => {
     })
     tileDisplay.append(rowElement);
 });
+
+const flipTile = () => {
+    const rowTiles = document.querySelector('#guessedRow-' + currentRow).childNodes
+    rowTiles.forEach((tile, index) => {
+        const dataLetter = tile.getAttribute('data')
+        if (dataLetter == wordle[index]) {
+            tile.classList.add('green-overlay')
+        } else if (wordle.includes(dataLetter)) {
+            tile.classList.add('yellow-overlay')
+        } else {
+            tile.classList.add('grey-overlay')
+        }
+    })
+}

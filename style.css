@@ -74,3 +74,18 @@ body {
 .key-container button:nth-child(11) {
     margin-left:35px;
 }
+
+.grey-overlay {
+    background-color: #3a3a3a !important;
+    border: none !important;
+}
+
+.yellow-overlay {
+    background-color: #b59f3a !important;
+    border: none !important;
+}
+
+.green-overlay {
+    background-color: #538d4e !important;
+    border: none !important;
+}

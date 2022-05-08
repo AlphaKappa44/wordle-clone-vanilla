@@ -102,7 +102,7 @@ const showMessage = (message) => {
     messageDisplay.append(messageElement)
     setTimeout(() => {
         messageDisplay.removeChild(messageElement)
-    }, 2000);
+    }, 4000);
 }
 
 // assign letters to keys
@@ -144,12 +144,14 @@ const flipTile = () => {
     const rowTiles = document.querySelector('#guessedRow-' + currentRow).childNodes
     rowTiles.forEach((tile, index) => {
         const dataLetter = tile.getAttribute('data')
-        if (dataLetter == wordle[index]) {
-            tile.classList.add('green-overlay')
-        } else if (wordle.includes(dataLetter)) {
-            tile.classList.add('yellow-overlay')
-        } else {
-            tile.classList.add('grey-overlay')
-        }
+        setTimeout(() => {
+            if (dataLetter == wordle[index]) {
+                tile.classList.add('green-overlay')
+            } else if (wordle.includes(dataLetter)) {
+                tile.classList.add('yellow-overlay')
+            } else {
+                tile.classList.add('grey-overlay')
+            }
+        }, 500 * index);
     })
 }
